@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vini Tattoo - Mogi Mirim</title>
+    <meta name="description" content="Especialista em tatuagens estilo Rock n Roll e Nerd em Mogi Mirim.">
+    
+    <!-- Importando Tailwind CSS para estilização rápida e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Importando Fontes do Google: 'Oswald' para títulos impactantes e 'Inter' para textos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Importando FontAwesome para os ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Configuração de tema do Tailwind e CSS customizado -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        oswald: ['Oswald', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-purple': '#6d28d9', // Roxo marcante
+                        'brand-dark': '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos globais e scrollbar customizada */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+        }
+        
+        h1, h2, h3, h4, .font-display {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* Classe para o efeito de glassmorphism (vidro) suave nos cards */
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Efeito de hover brilhante neon */
+        .hover-neon:hover {
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-black text-gray-200 min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-40 glass-panel py-4 px-6 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold font-display text-white tracking-wider flex items-center gap-2">
+                <i class="fa-solid fa-skull text-purple-400"></i> VINI TATTOO
+            </a>
+            <div class="hidden md:flex gap-6 font-semibold text-sm tracking-wide">
+                <a href="#sobre" class="hover:text-purple-400 transition-colors">Sobre Mim</a>
+                <a href="#estudio" class="hover:text-purple-400 transition-colors">O Estúdio</a>
+                <a href="#galeria" class="hover:text-purple-400 transition-colors">Galeria</a>
+            </div>
+            <a href="https://wa.me/5519998131159" target="_blank" class="hidden md:flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full font-bold transition-transform hover:scale-105">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Agendar
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6 flex flex-col items-center justify-center text-center min-h-[80vh]">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&q=80&w=1920')] bg-cover bg-center opacity-10"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+                Arte na Pele <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">Com Atitude</span>
+            </h1>
+            <p class="text-lg md:text-2xl mb-8 text-gray-300 max-w-2xl mx-auto font-light">
+                Tatuador versátil em Mogi Mirim. Especialista em estilos Rock 'n' Roll, Cultura Nerd, Geek e muito mais.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="https://wa.me/5519998131159" target="_blank" class="w-full sm:w-auto bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-500 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg hover-neon transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i> Fazer Orçamento
+                </a>
+                <a href="#galeria" class="w-full sm:w-auto glass-panel hover:bg-white/10 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:-translate-y-1">
+                    Ver Portfólio
+                </a>
+            </div>
+            <div class="mt-8 flex items-center justify-center gap-2 text-gray-400">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Mogi Mirim, SP</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção Sobre Mim -->
+    <section id="sobre" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="glass-panel rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 md:gap-16 shadow-2xl">
+                
+                <!-- Imagem do Perfil (25.jpg) -->
+                <div class="relative w-64 h-64 md:w-80 md:h-80 flex-shrink-0 group">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
+                    <img src="25.jpg" alt="Vini - Tatuador" class="relative w-full h-full object-cover rounded-full border-4 border-gray-800 shadow-2xl transition-transform duration-500 group-hover:scale-105 z-10" onerror="this.src='https://placehold.co/400x400/1e293b/a855f7?text=Vini+Tattoo'">
+                </div>
+
+                <!-- Texto Sobre -->
+                <div class="text-center md:text-left">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Quem é o <span class="text-purple-400">Vini</span>?</h2>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                        E aí, beleza? Sou o Vini, apaixonado por tatuagem e por transformar ideias em obras de arte definitivas. Minha inspiração vem direto da energia pulsante do <strong>Rock 'n' Roll</strong> e da criatividade sem limites do <strong>Universo Nerd/Geek</strong>.
+                    </p>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                        Seja uma caveira old school, um personagem clássico dos quadrinhos ou algo totalmente personalizado, eu tenho a versatilidade e o talento para mandar bem em qualquer estilo. Meu compromisso é com a qualidade do traço, sombreamento impecável e, acima de tudo, a sua satisfação.
+                    </p>
+                    <div class="flex gap-4 justify-center md:justify-start">
+                        <div class="bg-gray-800/50 p-4 rounded-xl text-center border border-gray-700 w-32">
+                            <i class="fa-solid fa-guitar text-3xl text-purple-400 mb-2"></i>
+                            <p class="font-bold font-display">Rock Style</p>
+                        </div>
+                        <div class="bg-gray-800/50 p-4 rounded-xl text-center border border-gray-700 w-32">
+                            <i class="fa-solid fa-gamepad text-3xl text-pink-400 mb-2"></i>
+                            <p class="font-bold font-display">Geek Art</p>
+                        </div>
+                        <div class="bg-gray-800/50 p-4 rounded-xl text-center border border-gray-700 w-32">
+                            <i class="fa-solid fa-pen-nib text-3xl text-blue-400 mb-2"></i>
+                            <p class="font-bold font-display">Versátil</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção O Estúdio -->
+    <section id="estudio" class="py-20 px-6 bg-black/40">
+        <div class="max-w-6xl mx-auto text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">O <span class="text-purple-400">Estúdio</span></h2>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">Um espaço com muita resenha, biossegurança rigorosa e a vibe perfeita para a sua nova tattoo.</p>
+        </div>
+
+        <!-- Grid de imagens do estúdio e Vini trabalhando -->
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Imagem 21 -->
+            <div class="group overflow-hidden rounded-2xl cursor-pointer relative aspect-[4/5] bg-gray-800 shadow-lg">
+                <img src="21.jpg" alt="Vini no estúdio" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:opacity-80" onerror="this.src='https://placehold.co/400x500/1e293b/a855f7?text=Foto+Studio+1'">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <span class="text-white font-bold font-display tracking-wide">Estilo Único</span>
+                </div>
+            </div>
+            
+            <!-- Imagem 22 -->
+            <div class="group overflow-hidden rounded-2xl cursor-pointer relative aspect-[4/5] bg-gray-800 shadow-lg">
+                <img src="22.jpg" alt="Vini tatuando" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:opacity-80" onerror="this.src='https://placehold.co/400x500/1e293b/a855f7?text=Foto+Studio+2'">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <span class="text-white font-bold font-display tracking-wide">Foco no Detalhe</span>
+                </div>
+            </div>
+
+            <!-- Imagem 23 -->
+            <div class="group overflow-hidden rounded-2xl cursor-pointer relative aspect-[4/5] bg-gray-800 shadow-lg">
+                <img src="23.jpg" alt="Letreiro Vini Tattoo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:opacity-80" onerror="this.src='https://placehold.co/400x500/1e293b/a855f7?text=Foto+Studio+3'">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <span class="text-white font-bold font-display tracking-wide">Nosso Espaço</span>
+                </div>
+            </div>
+
+            <!-- Imagem 24 -->
+            <div class="group overflow-hidden rounded-2xl cursor-pointer relative aspect-[4/5] bg-gray-800 shadow-lg">
+                <img src="24.jpg" alt="Vini mostrando estilo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:opacity-80" onerror="this.src='https://placehold.co/400x500/1e293b/a855f7?text=Foto+Studio+4'">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <span class="text-white font-bold font-display tracking-wide">Atitude Rock</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Galeria / Artes -->
+    <section id="galeria" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-gray-700 pb-6">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-2">Galeria de <span class="text-pink-500">Artes</span></h2>
+                    <p class="text-gray-400">Alguns trabalhos e inspirações para a sua próxima sessão.</p>
+                </div>
+                <a href="https://wa.me/5519998131159" class="text-purple-400 hover:text-purple-300 mt-4 md:mt-0 font-semibold flex items-center gap-2 group">
+                    Gostou? Agende a sua <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-2"></i>
+                </a>
+            </div>
+
+            <!-- Grid de Galeria (Estilo Masonry aproximado com grid) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Arte 1 (Skull/Rock) -->
+                <div class="group relative overflow-hidden rounded-xl bg-gray-900 shadow-lg h-[400px]">
+                    <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?q=80&w=800&auto=format&fit=crop" alt="Skull Tattoo" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:opacity-60">
+                    <div class="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black via-black/50 to-transparent">
+                        <h3 class="text-2xl text-white font-bold mb-1">Dark Art</h3>
+                        <p class="text-purple-300 text-sm">Caveiras, Sombras e Rock</p>
+                    </div>
+                </div>
+
+                <!-- Arte 2 (Nerd/Geek Vibe) -->
+                <div class="group relative overflow-hidden rounded-xl bg-gray-900 shadow-lg h-[400px]">
+                    <img src="https://images.unsplash.com/photo-1590246814883-578878cb1c2b?q=80&w=800&auto=format&fit=crop" alt="Color Tattoo" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:opacity-60">
+                    <div class="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black via-black/50 to-transparent">
+                        <h3 class="text-2xl text-white font-bold mb-1">Cores Vivas</h3>
+                        <p class="text-purple-300 text-sm">Geek, Anime e Cultura Pop</p>
+                    </div>
+                </div>
+
+                <!-- Arte 3 (Detalhes/Máquina) -->
+                <div class="group relative overflow-hidden rounded-xl bg-gray-900 shadow-lg h-[400px]">
+                    <img src="https://images.unsplash.com/photo-1562962230-16e4623d36e6?q=80&w=800&auto=format&fit=crop" alt="Tattoo Machine" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:opacity-60">
+                    <div class="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black via-black/50 to-transparent">
+                        <h3 class="text-2xl text-white font-bold mb-1">Precisão</h3>
+                        <p class="text-purple-300 text-sm">Traços finos e equipamentos de ponta</p>
+                    </div>
+                </div>
+
+                <!-- Arte 4 (Geral Tattoo) -->
+                <div class="group relative overflow-hidden rounded-xl bg-gray-900 shadow-lg h-[400px] lg:col-span-2">
+                    <img src="https://images.unsplash.com/photo-1535450849767-1755dc0398dd?q=80&w=1200&auto=format&fit=crop" alt="Tattoo close up" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:opacity-60">
+                    <div class="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black via-black/50 to-transparent">
+                        <h3 class="text-2xl text-white font-bold mb-1">Projetos Exclusivos</h3>
+                        <p class="text-purple-300 text-sm">Criados sob medida para a sua história</p>
+                    </div>
+                </div>
+
+                <!-- Arte 5 (Estilo Livre) -->
+                <div class="group relative overflow-hidden rounded-xl bg-gray-900 shadow-lg h-[400px]">
+                    <img src="https://images.unsplash.com/photo-1621360841013-c76831f122f3?q=80&w=800&auto=format&fit=crop" alt="Tattoo style" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:opacity-60">
+                    <div class="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black via-black/50 to-transparent">
+                        <h3 class="text-2xl text-white font-bold mb-1">Versatilidade</h3>
+                        <p class="text-purple-300 text-sm">Do Old School ao Realismo</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato Rápida / Footer -->
+    <footer class="bg-black/80 pt-16 pb-8 px-6 border-t border-gray-800 text-center md:text-left">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+            <!-- Marca -->
+            <div>
+                <a href="#" class="text-3xl font-bold font-display text-white tracking-wider flex items-center justify-center md:justify-start gap-2 mb-4">
+                    <i class="fa-solid fa-skull text-purple-500"></i> VINI TATTOO
+                </a>
+                <p class="text-gray-400 text-sm leading-relaxed max-w-sm mx-auto md:mx-0">
+                    Estúdio de tatuagem focado em arte autoral, estilos Rock 'n' Roll, Nerd e uma experiência premium em Mogi Mirim.
+                </p>
+            </div>
+            
+            <!-- Links Úteis -->
+            <div class="flex flex-col items-center md:items-start">
+                <h4 class="text-white font-bold text-lg mb-4 font-display">Navegação</h4>
+                <div class="flex flex-col gap-2">
+                    <a href="#sobre" class="text-gray-400 hover:text-purple-400 transition-colors">Sobre o Vini</a>
+                    <a href="#estudio" class="text-gray-400 hover:text-purple-400 transition-colors">Conheça o Estúdio</a>
+                    <a href="#galeria" class="text-gray-400 hover:text-purple-400 transition-colors">Portfólio de Artes</a>
+                </div>
+            </div>
+
+            <!-- Contato -->
+            <div class="flex flex-col items-center md:items-start">
+                <h4 class="text-white font-bold text-lg mb-4 font-display">Contato</h4>
+                <div class="flex flex-col gap-3">
+                    <a href="https://wa.me/5519998131159" target="_blank" class="text-gray-400 hover:text-green-400 transition-colors flex items-center justify-center md:justify-start gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> +55 19 99813-1159
+                    </a>
+                    <p class="text-gray-400 flex items-center justify-center md:justify-start gap-2">
+                        <i class="fa-solid fa-location-dot"></i> Mogi Mirim, SP
+                    </p>
+                    <!-- Redes Sociais (Fictício/Espaço) -->
+                    <div class="flex gap-4 mt-2">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-purple-600 hover:text-white transition-all">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-all">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center border-t border-gray-800 pt-8">
+            <p class="text-gray-500 text-sm">
+                &copy; <span id="year"></span> Vini Tattoo. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5519998131159" target="_blank" aria-label="Fale conosco no WhatsApp"
+       class="fixed bottom-6 right-6 md:bottom-10 md:right-10 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:bg-green-400 hover:scale-110 transition-all duration-300 z-50 group">
+        <i class="fa-brands fa-whatsapp group-hover:rotate-12 transition-transform duration-300"></i>
+        <!-- Ping animation de notificação -->
+        <span class="absolute -top-1 -right-1 flex h-4 w-4">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-4 w-4 bg-red-500 border-2 border-gray-900"></span>
+        </span>
+    </a>
+
+    <script>
+        // Preencher o ano atual automaticamente no footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
